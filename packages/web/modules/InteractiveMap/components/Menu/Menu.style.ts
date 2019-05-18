@@ -43,7 +43,8 @@ export const Title = styled.h2`
 `;
 
 export const Section = styled.section`
-  padding-left: 24px;
+  /* padding-left: 24px; */
+  margin-bottom: 5px;
 `;
 
 export const SectionTitle = styled.h3`
@@ -98,6 +99,7 @@ export const ToggleBtn = styled.label`
   }
 
   & > div {
+    border-radius: 3px;
     cursor: pointer;
     padding: 8px 8px;
     display: flex;
@@ -124,7 +126,7 @@ export const Nodes = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: -8px;
+  /* margin: -8px; */
 
   & > ${ToggleBtn} {
     margin: 8px;

@@ -2,23 +2,22 @@ import { transparentize } from "polished";
 import styled from "../../../../themes/styled";
 
 export const Button = styled.button`
-  width: 100%;
-  padding: 8px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 0;
-  outline: none;
-  border: none;
-  font-size: 16px;
-  line-height: 20px;
-  color: white;
   background: ${({ theme }) => theme.colors.primary500};
+  border: none;
+  border-radius: 3px;
+  color: white;
   cursor: pointer;
-  transition: background 0.242s ease;
+  display: flex;
   font-family: "ibm_plex";
-  font-weight: bold;
-
+  font-size: 16px;
+  /* font-weight: bold; */
+  justify-content: center;
+  line-height: 20px;
+  outline: none;
+  padding: 8px;
+  transition: background 0.242s ease;
+  width: 100%;
   &:hover,
   &focus {
     background: ${({ theme }) => theme.colors.primary700};

@@ -4,6 +4,7 @@ export type MarkerSelection = {
   q_impure: boolean;
   q_normal: boolean;
   q_pure: boolean;
+  n: boolean;
   n_iron: boolean;
   n_copper: boolean;
   n_limestone: boolean;
@@ -17,6 +18,7 @@ export type MarkerSelection = {
   n_sam: boolean;
   n_blocked: boolean;
   n_exploited: boolean;
+  s: boolean;
   s_blocked: boolean;
   s_collected: boolean;
   s_green: boolean;
@@ -41,9 +43,10 @@ export function getDefaultSelection(hash?: number): MarkerSelection {
     q_impure: true,
     q_normal: true,
     q_pure: true,
-    n_iron: true,
-    n_copper: true,
-    n_limestone: true,
+    n: false,
+    n_iron: false,
+    n_copper: false,
+    n_limestone: false,
     n_coal: false,
     n_oil: false,
     n_caterium: false,
@@ -54,6 +57,7 @@ export function getDefaultSelection(hash?: number): MarkerSelection {
     n_sam: false,
     n_blocked: false,
     n_exploited: false,
+    s: false,
     s_blocked: false,
     s_collected: false,
     s_green: false,

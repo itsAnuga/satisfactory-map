@@ -36,6 +36,8 @@ export function hashToMarkerSelection(hash: number): MarkerSelection {
     a_blocked: binaryHash[26] === "1",
     a_collected: binaryHash[27] === "1",
     a_mercer: binaryHash[28] === "1",
-    a_somer: binaryHash[29] === "1"
+    a_somer: binaryHash[29] === "1",
+    n: binaryHash[30] === "1",
+    s: binaryHash[31] === "1"
   };
 }

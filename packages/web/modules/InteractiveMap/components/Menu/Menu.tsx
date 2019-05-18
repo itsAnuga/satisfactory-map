@@ -45,22 +45,11 @@ export const Menu = (props: Props) => {
         </S.LogoWrapper>
       )}
       <S.Content>
-        <LocateMeBtn onSaveLoaded={onSaveLoaded} />
+        <S.Section>
+          <LocateMeBtn onSaveLoaded={onSaveLoaded} />
+        </S.Section>
         <S.Title>Nodes</S.Title>
         <S.Section>
-          {/* <label>
-            <input type="checkbox" {...generateHandle("n_exploited")} />
-            Hide exploited
-          </label> */}
-          <S.ToggleBtn>
-            <input type="checkbox" {...generateHandle("n_blocked")} />
-            <div>{selection.n_blocked ? "Show" : "Hide"} blocked ones</div>
-          </S.ToggleBtn>
-          <br />
-          <S.ToggleBtn>
-            <input type="checkbox" {...generateHandle("n_exploited")} />
-            <div>{selection.n_exploited ? "Show" : "Hide"} exploited ones</div>
-          </S.ToggleBtn>
           <S.SectionTitle>Purity</S.SectionTitle>
           <S.Purity>
             <S.ToggleBtn>
@@ -76,53 +65,7 @@ export const Menu = (props: Props) => {
               <div>Pure</div>
             </S.ToggleBtn>
           </S.Purity>
-          <S.SectionTitle>
-            <div>Type</div>
-            <S.SectionSelect>
-              <button
-                onClick={() =>
-                  setSelection({
-                    ...selection,
-                    g_geysers: true,
-                    n_bauxite: true,
-                    n_caterium: true,
-                    n_copper: true,
-                    n_coal: true,
-                    n_quartz: true,
-                    n_oil: true,
-                    n_limestone: true,
-                    n_iron: true,
-                    n_sam: true,
-                    n_sulfur: true,
-                    n_uranium: true
-                  })
-                }
-              >
-                All
-              </button>
-              <button
-                onClick={() =>
-                  setSelection({
-                    ...selection,
-                    g_geysers: false,
-                    n_bauxite: false,
-                    n_caterium: false,
-                    n_copper: false,
-                    n_coal: false,
-                    n_quartz: false,
-                    n_oil: false,
-                    n_limestone: false,
-                    n_iron: false,
-                    n_sam: false,
-                    n_sulfur: false,
-                    n_uranium: false
-                  })
-                }
-              >
-                None
-              </button>
-            </S.SectionSelect>
-          </S.SectionTitle>
+          <S.SectionTitle>Types</S.SectionTitle>
           <S.Nodes>
             <S.ToggleBtn>
               <input type="checkbox" {...generateHandle("n_iron")} />
@@ -227,83 +170,126 @@ export const Menu = (props: Props) => {
               </div>
             </S.ToggleBtn>
           </S.Nodes>
+          <S.SectionTitle>Options</S.SectionTitle>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                checked={selection.n}
+                className="custom-control-input"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  let isChecked = e.target.checked;
+                  setSelection({
+                    ...selection,
+                    n: isChecked,
+                    n_bauxite: isChecked,
+                    n_caterium: isChecked,
+                    n_copper: isChecked,
+                    n_coal: isChecked,
+                    n_quartz: isChecked,
+                    n_oil: isChecked,
+                    n_limestone: isChecked,
+                    n_iron: isChecked,
+                    n_sam: isChecked,
+                    n_sulfur: isChecked,
+                    n_uranium: isChecked
+                  })
+                }}
+                type="checkbox"
+                id="customSwitchMiningNodes"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchMiningNodes"
+              >
+                {selection.n ? "Hide" : "Show"} mining nodes
+              </label>
+            </div>
+          </S.SectionSelect>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                {...generateHandle("n_blocked")}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchBlocked"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchBlocked"
+              >
+                {selection.n_blocked ? "Show" : "Hide"} blocked ones
+              </label>
+            </div>
+          </S.SectionSelect>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                {...generateHandle("n_exploited")}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchUsed"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchUsed"
+              >
+                {selection.n_exploited ? "Show" : "Hide"} used ones
+              </label>
+            </div>
+          </S.SectionSelect>
         </S.Section>
-        <S.Title>
-          Geysers
-          <S.SectionSelect>
-            <button
-              onClick={() => setSelection({ ...selection, g_geysers: true })}
-            >
-              All
-            </button>
-            <button
-              onClick={() => setSelection({ ...selection, g_geysers: false })}
-            >
-              None
-            </button>
-          </S.SectionSelect>
-        </S.Title>
-        <S.Title>
-          DropPods
-          <S.SectionSelect>
-            <button
-              onClick={() => setSelection({ ...selection, d_drops: true })}
-            >
-              All
-            </button>
-            <button
-              onClick={() => setSelection({ ...selection, d_drops: false })}
-            >
-              None
-            </button>
-          </S.SectionSelect>
-        </S.Title>
         <S.Section>
-          <S.ToggleBtn>
-            <input type="checkbox" {...generateHandle("d_collected")} />
-            <div>{selection.d_collected ? "Show" : "Hide"} collected ones</div>
-          </S.ToggleBtn>
-        </S.Section>
-        <S.Title>
-          Slugs
           <S.SectionSelect>
-            <button
-              onClick={() =>
-                setSelection({
-                  ...selection,
-                  s_green: true,
-                  s_yellow: true,
-                  s_purple: true
-                })
-              }
-            >
-              All
-            </button>
-            <button
-              onClick={() =>
-                setSelection({
-                  ...selection,
-                  s_green: false,
-                  s_yellow: false,
-                  s_purple: false
-                })
-              }
-            >
-              None
-            </button>
+            <div className="custom-control custom-switch">
+              <input
+                {...generateHandle("g_geysers")}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchGeysers"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchGeysers"
+              >
+                {selection.g_geysers ? "Hide" : "Show"} geysers
+              </label>
+            </div>
           </S.SectionSelect>
-        </S.Title>
-        <S.Section>
-          <S.ToggleBtn>
-              <input type="checkbox" {...generateHandle("s_collected")} />
-            <div>{selection.s_collected ? "Show" : "Hide"} collected ones</div>
-          </S.ToggleBtn>
-          <br />
-          <S.ToggleBtn>
-            <input type="checkbox" {...generateHandle("s_blocked")} />
-            <div>{selection.s_blocked ? "Show" : "Hide"} blocked ones</div>
-          </S.ToggleBtn>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                {...generateHandle("d_drops")}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchDropPods"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchDropPods"
+              >
+                {selection.d_drops ? "Hide" : "Show"} drop-pods
+              </label>
+            </div>
+          </S.SectionSelect>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                {...generateHandle("d_collected")}
+                className="custom-control-input"
+                // disabled={onSaveLoaded ? true : false}
+                type="checkbox"
+                id="customSwitchDropPodsCollected"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchDropPodsCollected"
+              >
+                {selection.d_collected ? "Show" : "Hide"} collected drop-pods
+              </label>
+            </div>
+          </S.SectionSelect>
         </S.Section>
+        <S.Title>Slugs</S.Title>
         <S.Section>
           <S.Slugs>
             <S.ToggleBtn>
@@ -343,6 +329,41 @@ export const Menu = (props: Props) => {
               </div>
             </S.ToggleBtn>
           </S.Slugs>
+        </S.Section>
+        <S.SectionSelect>
+          <div className="custom-control custom-switch">
+            <input
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                let isChecked = e.target.checked;
+                setSelection({
+                  ...selection,
+                  s: isChecked,
+                  s_green: isChecked,
+                  s_yellow: isChecked,
+                  s_purple: isChecked
+                })}}
+              className="custom-control-input"
+              type="checkbox"
+              id="customSwitchSlugs"
+            />
+            <label
+              className="custom-control-label"
+              htmlFor="customSwitchSlugs"
+            >
+              {selection.s ? "Hide" : "Show"} slugs
+            </label>
+          </div>
+        </S.SectionSelect>
+        <S.Section>
+          <S.ToggleBtn>
+              <input type="checkbox" {...generateHandle("s_collected")} />
+            <div>{selection.s_collected ? "Show" : "Hide"} collected ones</div>
+          </S.ToggleBtn>
+          <br />
+          <S.ToggleBtn>
+            <input type="checkbox" {...generateHandle("s_blocked")} />
+            <div>{selection.s_blocked ? "Show" : "Hide"} blocked ones</div>
+          </S.ToggleBtn>
         </S.Section>
         <S.Title>
           Artifacts
