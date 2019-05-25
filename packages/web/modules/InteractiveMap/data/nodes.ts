@@ -557,7 +557,7 @@ export const nodes: Node[] = [
     z: 2280.0439453125,
     originId: "PL_RN_15",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -667,7 +667,7 @@ export const nodes: Node[] = [
     z: 2291.037841796875,
     originId: "PL_RN_16",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -858,8 +858,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_178",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'limestone',
+    purity: 'normal'
   },
   {
     x: 225503.75,
@@ -868,8 +868,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_179",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'copper',
+    purity: 'pure'
   },
   {
     x: 229516.109375,
@@ -917,7 +917,7 @@ export const nodes: Node[] = [
     z: -1825.7677001953125,
     originId: "PL_RN_23_96",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -927,7 +927,7 @@ export const nodes: Node[] = [
     z: -1829.52685546875,
     originId: "PL_RN_24_97",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -937,7 +937,7 @@ export const nodes: Node[] = [
     z: -1827.2554931640625,
     originId: "PL_RN_25_98",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -947,7 +947,7 @@ export const nodes: Node[] = [
     z: -1821.5040283203125,
     originId: "PL_RN_26_99",
     obstructed: false,
-    purity: "normal",
+    purity: "pure",
     type: "oil",
     exploited: false
   },
@@ -957,7 +957,7 @@ export const nodes: Node[] = [
     z: -1832.1844482421875,
     originId: "PL_RN_27_100",
     obstructed: false,
-    purity: "normal",
+    purity: "pure",
     type: "oil",
     exploited: false
   },
@@ -1007,7 +1007,7 @@ export const nodes: Node[] = [
     z: -1801.33935546875,
     originId: "PL_RN_31_104",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -1017,7 +1017,7 @@ export const nodes: Node[] = [
     z: -1813.8367919921875,
     originId: "PL_RN_32_105",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -1258,8 +1258,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_438",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: 79670.5,
@@ -1357,7 +1357,7 @@ export const nodes: Node[] = [
     z: 1049.76953125,
     originId: "PL_RN_446_1",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -1367,7 +1367,7 @@ export const nodes: Node[] = [
     z: 1419.1478271484375,
     originId: "PL_RN_447",
     obstructed: false,
-    purity: "normal",
+    purity: "impure",
     type: "oil",
     exploited: false
   },
@@ -1618,8 +1618,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_470",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: 223671.875,
@@ -1638,8 +1638,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_472",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: 219343.609375,
@@ -1698,8 +1698,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_478",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: 260298.515625,
@@ -1908,8 +1908,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_498",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: 155867.515625,
@@ -2617,7 +2617,7 @@ export const nodes: Node[] = [
     z: -1294.7979736328125,
     originId: "PL_RN_563",
     obstructed: false,
-    purity: "normal",
+    purity: "pure",
     type: "iron",
     exploited: false
   },
@@ -2627,7 +2627,7 @@ export const nodes: Node[] = [
     z: -1605.71484375,
     originId: "PL_RN_564",
     obstructed: false,
-    purity: "normal",
+    purity: "pure",
     type: "limestone",
     exploited: false
   },
@@ -2638,8 +2638,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_565_8",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: 193209.734375,
@@ -2657,7 +2657,7 @@ export const nodes: Node[] = [
     z: 573.6340942382812,
     originId: "PL_RN_567",
     obstructed: false,
-    purity: "normal",
+    purity: "pure",
     type: "iron",
     exploited: false
   },
@@ -2687,7 +2687,7 @@ export const nodes: Node[] = [
     z: -54.522705078125,
     originId: "PL_RN_570",
     obstructed: false,
-    purity: "normal",
+    purity: "pure",
     type: "caterium",
     exploited: false
   },
@@ -2817,7 +2817,7 @@ export const nodes: Node[] = [
     z: -881.7694091796875,
     originId: "PL_RN_582",
     obstructed: false,
-    purity: "normal",
+    purity: "pure",
     type: "sulfur",
     exploited: false
   },
@@ -2828,8 +2828,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_583_1",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: -8700.84765625,
@@ -2948,8 +2948,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_594",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'iron',
+    purity: 'pure'
   },
   {
     x: 20776.251953125,
@@ -3037,7 +3037,7 @@ export const nodes: Node[] = [
     z: -847.2978515625,
     originId: "PL_RN_66",
     obstructed: false,
-    purity: "pure",
+    purity: "normal",
     type: "iron",
     exploited: false
   },
@@ -3047,7 +3047,7 @@ export const nodes: Node[] = [
     z: -1613.8238525390625,
     originId: "PL_RN_67_2193",
     obstructed: false,
-    purity: "pure",
+    purity: "normal",
     type: "limestone",
     exploited: false
   },
@@ -3068,8 +3068,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_69",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'limestone',
+    purity: 'pure'
   },
   {
     x: -110109.1015625,
@@ -3307,8 +3307,8 @@ export const nodes: Node[] = [
     z: -798.658935546875,
     originId: "PL_RN_90_482",
     obstructed: false,
-    purity: "pure",
-    type: "coal",
+    purity: "normal",
+    type: "iron",
     exploited: false
   },
   {
@@ -3317,7 +3317,7 @@ export const nodes: Node[] = [
     z: -1601.3115234375,
     originId: "PL_RN_91_785",
     obstructed: false,
-    purity: "pure",
+    purity: "normal",
     type: "copper",
     exploited: false
   },
@@ -3328,8 +3328,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_92",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'copper',
+    purity: 'normal'
   },
   {
     x: 219900.90625,
@@ -3338,8 +3338,8 @@ export const nodes: Node[] = [
     originId: "PL_RN_93_5",
     obstructed: false,
     exploited: false,
-    type: 'unknown',
-    purity: 'unknown'
+    type: 'limestone',
+    purity: 'pure'
   },
   {
     x: 160085.53125,
