@@ -14,6 +14,7 @@ export const Button = styled.button`
   /* font-weight: bold; */
   justify-content: center;
   line-height: 20px;
+  margin-bottom: -20px;
   outline: none;
   padding: 8px;
   transition: background 0.242s ease;

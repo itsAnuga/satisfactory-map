@@ -48,8 +48,8 @@ export const Menu = (props: Props) => {
         <S.Section>
           <LocateMeBtn onSaveLoaded={onSaveLoaded} />
         </S.Section>
-        <S.Title>Nodes</S.Title>
         <S.Section>
+          <S.Title>Resource Nodes</S.Title>
           <S.SectionTitle>Purity</S.SectionTitle>
           <S.Purity>
             <S.ToggleBtn>
@@ -169,8 +169,16 @@ export const Menu = (props: Props) => {
                 S.A.M
               </div>
             </S.ToggleBtn>
+            <S.ToggleBtn>
+              <input type="checkbox" {...generateHandle("g_geysers")} />
+              <div
+                style={{ backgroundColor: "#00eaff", borderColor: "#00eaff" }}
+              >
+                Geysers
+              </div>
+            </S.ToggleBtn>
           </S.Nodes>
-          <S.SectionTitle>Options</S.SectionTitle>
+          {/* <S.SectionTitle>Options</S.SectionTitle> */}
           <S.SectionSelect>
             <div className="custom-control custom-switch">
               <input
@@ -181,6 +189,7 @@ export const Menu = (props: Props) => {
                   setSelection({
                     ...selection,
                     n: isChecked,
+                    g_geysers: isChecked,
                     n_bauxite: isChecked,
                     n_caterium: isChecked,
                     n_copper: isChecked,
@@ -201,23 +210,7 @@ export const Menu = (props: Props) => {
                 className="custom-control-label"
                 htmlFor="customSwitchMiningNodes"
               >
-                {selection.n ? "Hide" : "Show"} mining nodes
-              </label>
-            </div>
-          </S.SectionSelect>
-          <S.SectionSelect>
-            <div className="custom-control custom-switch">
-              <input
-                {...generateHandle("n_blocked")}
-                className="custom-control-input"
-                type="checkbox"
-                id="customSwitchBlocked"
-              />
-              <label
-                className="custom-control-label"
-                htmlFor="customSwitchBlocked"
-              >
-                {selection.n_blocked ? "Show" : "Hide"} blocked ones
+                {selection.n ? "Hide" : "Show"} nodes
               </label>
             </div>
           </S.SectionSelect>
@@ -233,12 +226,29 @@ export const Menu = (props: Props) => {
                 className="custom-control-label"
                 htmlFor="customSwitchUsed"
               >
-                {selection.n_exploited ? "Show" : "Hide"} used ones
+                {selection.n_exploited ? "Show" : "Hide"} mined
+              </label>
+            </div>
+          </S.SectionSelect>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                {...generateHandle("n_blocked")}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchBlocked"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchBlocked"
+              >
+                {selection.n_blocked ? "Show" : "Hide"} blocked
               </label>
             </div>
           </S.SectionSelect>
         </S.Section>
-        <S.Section>
+        {/* <S.Section>
+          <S.SectionTitle>Geysers</S.SectionTitle>
           <S.SectionSelect>
             <div className="custom-control custom-switch">
               <input
@@ -255,6 +265,9 @@ export const Menu = (props: Props) => {
               </label>
             </div>
           </S.SectionSelect>
+        </S.Section> */}
+        <S.Section>
+          <S.Title>Drop-pods</S.Title>
           <S.SectionSelect>
             <div className="custom-control custom-switch">
               <input
@@ -267,7 +280,7 @@ export const Menu = (props: Props) => {
                 className="custom-control-label"
                 htmlFor="customSwitchDropPods"
               >
-                {selection.d_drops ? "Hide" : "Show"} drop-pods
+                {selection.d_drops ? "Hide" : "Show"} pods
               </label>
             </div>
           </S.SectionSelect>
@@ -284,13 +297,13 @@ export const Menu = (props: Props) => {
                 className="custom-control-label"
                 htmlFor="customSwitchDropPodsCollected"
               >
-                {selection.d_collected ? "Show" : "Hide"} collected drop-pods
+                {selection.d_collected ? "Show" : "Hide"} collected
               </label>
             </div>
           </S.SectionSelect>
         </S.Section>
-        <S.Title>Slugs</S.Title>
         <S.Section>
+          <S.Title>Slugs</S.Title>
           <S.Slugs>
             <S.ToggleBtn>
               <input type="checkbox" {...generateHandle("s_green")} />
@@ -329,44 +342,75 @@ export const Menu = (props: Props) => {
               </div>
             </S.ToggleBtn>
           </S.Slugs>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  let isChecked = e.target.checked;
+                  setSelection({
+                    ...selection,
+                    s: isChecked,
+                    s_green: isChecked,
+                    s_yellow: isChecked,
+                    s_purple: isChecked
+                  })}}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchSlugs"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchSlugs"
+              >
+                {selection.s ? "Hide" : "Show"} slugs
+              </label>
+            </div>
+          </S.SectionSelect>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  let isChecked = e.target.checked;
+                  setSelection({
+                    ...selection,
+                    s_blocked: isChecked
+                  })}}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchSlugsBlocked"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchSlugsBlocked"
+              >
+                {selection.s_collected ? "Show" : "Hide"} blocked
+              </label>
+            </div>
+          </S.SectionSelect>
+          <S.SectionSelect>
+            <div className="custom-control custom-switch">
+              <input
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  let isChecked = e.target.checked;
+                  setSelection({
+                    ...selection,
+                    s_collected: isChecked
+                  })}}
+                className="custom-control-input"
+                type="checkbox"
+                id="customSwitchSlugsCollected"
+              />
+              <label
+                className="custom-control-label"
+                htmlFor="customSwitchSlugsCollected"
+              >
+                {selection.s_collected ? "Show" : "Hide"} collected
+              </label>
+            </div>
+          </S.SectionSelect>
         </S.Section>
-        <S.SectionSelect>
-          <div className="custom-control custom-switch">
-            <input
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                let isChecked = e.target.checked;
-                setSelection({
-                  ...selection,
-                  s: isChecked,
-                  s_green: isChecked,
-                  s_yellow: isChecked,
-                  s_purple: isChecked
-                })}}
-              className="custom-control-input"
-              type="checkbox"
-              id="customSwitchSlugs"
-            />
-            <label
-              className="custom-control-label"
-              htmlFor="customSwitchSlugs"
-            >
-              {selection.s ? "Hide" : "Show"} slugs
-            </label>
-          </div>
-        </S.SectionSelect>
+        <S.Title>Artifacts</S.Title>
         <S.Section>
-          <S.ToggleBtn>
-              <input type="checkbox" {...generateHandle("s_collected")} />
-            <div>{selection.s_collected ? "Show" : "Hide"} collected ones</div>
-          </S.ToggleBtn>
-          <br />
-          <S.ToggleBtn>
-            <input type="checkbox" {...generateHandle("s_blocked")} />
-            <div>{selection.s_blocked ? "Show" : "Hide"} blocked ones</div>
-          </S.ToggleBtn>
-        </S.Section>
-        <S.Title>
-          Artifacts
           <S.SectionSelect>
             <button
               onClick={() =>
@@ -383,7 +427,7 @@ export const Menu = (props: Props) => {
               None
             </button>
           </S.SectionSelect>
-        </S.Title>
+        </S.Section>
         <S.Section>
           {/* <label>
             <input type="checkbox" {...generateHandle("a_collected")} />
